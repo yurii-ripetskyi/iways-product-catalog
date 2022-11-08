@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: @project.name@
+    version: @project.version@
+    build-time: @maven.build.timestamp@
+  config:
+    import: configserver:${security.cloud.config.uri}
+  cloud:
+    config:
+      name: ${spring.application.name}
+      username: ${security.cloud.config.username}
+      password: ${security.cloud.config.password}
